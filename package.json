@@ -26,7 +26,8 @@
     "underscore": "^1.6.0",
     "uuid": "^1.4.1",
     "validator": "^3.5.0",
-    "winston": "~0.7.*"
+    "winston": "~0.7.*",
+    "z-schema": "2.4.6"
   },
   "devDependencies": {
     "should": "latest",
