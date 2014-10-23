@@ -27,7 +27,7 @@
     "uuid": "^1.4.1",
     "validator": "^3.5.0",
     "winston": "~0.7.*",
-    "z-schema": "2.4.6"
+    "jsonschema": "1.0.0"
   },
   "devDependencies": {
     "should": "latest",
