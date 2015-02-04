@@ -1,41 +1,42 @@
 {
-  "name": "bridgeit-common",
-  "version": "0.1.2",
-  "description": "BridgeIt Common Module.  Common utilities, configurations, and functions for BridgeIt Services.",
-  "author": "ICEsoft Technologies Inc.",
-  "keywords": "bridgeit service common tools utilities",
-  "homepage": "http://bridgeit.mobi/",
-  "bugs": {
-    "url": "http://bridgeit.mobi/forum/",
-    "email": "bridgeit@icesoft.com"
-  },
-  "license": "Apache-2.0",
-  "main": "index",
-  "directories": {
-    "lib": "./lib",
-    "docs": "./docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bridgeit/bridgeit-common"
-  },
-  "dependencies": {
-    "bcrypt-nodejs": "~0.0.3",
-    "mongodb": "^1.4.8",
-    "request": "^2.34.0",
-    "underscore": "^1.6.0",
-    "uuid": "^1.4.1",
-    "validator": "^3.5.0",
-    "winston": "~0.7.*",
-    "jsonschema": "1.0.0"
-  },
-  "devDependencies": {
-    "should": "latest",
-    "supertest": "latest",
-    "assert": "latest"
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
-  "private": false
+    "name": "bridgeit-common",
+    "version": "0.1.2",
+    "description": "BridgeIt Common Module.  Common utilities, configurations, and functions for BridgeIt Services.",
+    "author": "ICEsoft Technologies Inc.",
+    "keywords": "bridgeit service common tools utilities",
+    "homepage": "http://bridgeit.mobi/",
+    "bugs": {
+        "url": "http://bridgeit.mobi/forum/",
+        "email": "bridgeit@icesoft.com"
+    },
+    "license": "Apache-2.0",
+    "main": "index",
+    "directories": {
+        "lib": "./lib",
+        "docs": "./docs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bridgeit/bridgeit-common"
+    },
+    "dependencies": {
+        "bcrypt-nodejs": "~0.0.3",
+        "jsonschema": "1.0.0",
+        "lodash": "^3.1.0",
+        "mongodb": "^1.4.8",
+        "request": "^2.34.0",
+        "underscore": "^1.6.0",
+        "uuid": "^1.4.1",
+        "validator": "^3.5.0",
+        "winston": "~0.7.*"
+    },
+    "devDependencies": {
+        "should": "latest",
+        "supertest": "latest",
+        "assert": "latest"
+    },
+    "engines": {
+        "node": "0.10.x"
+    },
+    "private": false
 }
