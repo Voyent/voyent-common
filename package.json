@@ -24,7 +24,7 @@
         "jsonschema": "1.0.0",
         "lodash": "^3.1.0",
         "mongodb": "^1.4.8",
-        "request": "^2.34.0",
+        "request": "^2.53.0",
         "underscore": "^1.6.0",
         "uuid": "^1.4.1",
         "validator": "^3.5.0",
