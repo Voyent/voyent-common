@@ -1,6 +1,6 @@
 {
   "name": "bridgeit-common",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "BridgeIt Common Module.  Common utilities, configurations, and functions for BridgeIt Services.",
   "author": "ICEsoft Technologies Inc.",
   "keywords": "bridgeit service common tools utilities",
