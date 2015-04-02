@@ -1,5 +1,4 @@
 var validator = require('validator');
-var uuid = require('node-uuid');
 var assert = require('assert');
 var tools = require('../lib/tools');
 
