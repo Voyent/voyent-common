@@ -45,7 +45,7 @@ describe(title, function () {
         var req = new MockRequest();
         var userPermissions = 'bridgeit.context.user.readSelf, bridgeit.context.user.writeSelf, bridgeit.context.user.readAny, bridgeit.context.user.writeAny, bridgeit.context.readSelf, bridgeit.context.writeSelf';
         var validPermission = 'bridgeit.context.user.readSelf';
-        var invalidPermission = 'bridgeit.doc.saveDocument';
+        var invalidPermission = 'bridgeit.context.user.read';
 
         it('set', function (done) {
             tools.setUserPermissionsHeader(req, userPermissions);
@@ -95,7 +95,7 @@ describe(title, function () {
         var req = new MockRequest();
         var servicePermissions = 'bridgeit.context.user.readSelf, bridgeit.context.user.writeSelf, bridgeit.context.user.readAny, bridgeit.context.user.writeAny, bridgeit.context.readSelf, bridgeit.context.writeSelf';
         var validPermission = 'bridgeit.context.user.readSelf';
-        var invalidPermission = 'bridgeit.doc.saveDocument';
+        var invalidPermission = 'bridgeit.context.user.read';
 
         it('set', function (done) {
             tools.setServicePermissionsHeader(req, servicePermissions);
