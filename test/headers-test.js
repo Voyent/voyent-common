@@ -1,6 +1,6 @@
 var assert = require('assert');
 var tools = require('../lib/tools');
-
+var config = require('../lib/config');
 
 //Create a simple object for getting and setting headers that
 //imitates how Express does it.
@@ -12,15 +12,12 @@ MockRequest.prototype.get = function (key) {
     return this.headers[key];
 };
 
-MockRequest.prototype.set = function (key, value) {
-    this.headers[key] = value;
-};
-
 
 var title = 'Service Headers';
 
 describe(title, function () {
 
+    //console.log('compressing permission headers:', config.tools.compressPermissionHeaders);
 
     describe('username', function () {
 
@@ -66,7 +63,7 @@ describe(title, function () {
 
         it('invalid permission', function (done) {
             var result = tools.hasUserPermissionInHeader(req, invalidPermission);
-            assert(!result);
+            assert(result === false);
             done();
         });
 
@@ -116,7 +113,7 @@ describe(title, function () {
 
         it('invalid permission', function (done) {
             var result = tools.hasServicePermissionInHeader(req, invalidPermission);
-            assert(!result);
+            assert(result === false);
             done();
         });
 
