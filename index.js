@@ -1,4 +1,5 @@
 exports.config = require('./lib/config');
+exports.env = require('./lib/env');
 
 //The logger is deprecated, use loggers instead
 exports.logger = require('./lib/logger');

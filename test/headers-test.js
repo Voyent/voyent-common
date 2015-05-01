@@ -61,8 +61,20 @@ describe(title, function () {
             done();
         });
 
+        it('valid permission', function (done) {
+            var result = tools.hasPermissionInHeader(req, validPermission);
+            assert(result);
+            done();
+        });
+
         it('invalid permission', function (done) {
             var result = tools.hasUserPermissionInHeader(req, invalidPermission);
+            assert(result === false);
+            done();
+        });
+
+        it('invalid permission', function (done) {
+            var result = tools.hasPermissionInHeader(req, invalidPermission);
             assert(result === false);
             done();
         });
@@ -111,8 +123,20 @@ describe(title, function () {
             done();
         });
 
+        it('valid permission', function (done) {
+            var result = tools.hasPermissionInHeader(req, validPermission);
+            assert(result);
+            done();
+        });
+
         it('invalid permission', function (done) {
             var result = tools.hasServicePermissionInHeader(req, invalidPermission);
+            assert(result === false);
+            done();
+        });
+
+        it('invalid permission', function (done) {
+            var result = tools.hasPermissionInHeader(req, invalidPermission);
             assert(result === false);
             done();
         });
