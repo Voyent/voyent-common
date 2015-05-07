@@ -17,17 +17,33 @@ var title = 'Service Headers';
 
 describe(title, function () {
 
-    //console.log('compressing permission headers:', config.tools.compressPermissionHeaders);
+    var req;
+
+    var username = 'johnsmith';
+    var token = '4ad88e4a-bbdc-412b-b532-6a18a6f43e35';
+
+    var userPermissions = 'bridgeit.context.user.readSelf, bridgeit.context.user.readAny, bridgeit.context.readStuff';
+    var userPermission = 'bridgeit.context.user.readSelf';
+
+    var servicePermissions = 'bridgeit.context.user.writeSelf, bridgeit.context.user.writeAny, bridgeit.context.writeStuff';
+    var servicePermission = 'bridgeit.context.user.writeSelf';
+
+    var unknownPermission = 'bridgeit.context.user.bad';
+
+    var anyButNotAllPermissions = 'bridgeit.context.user.readSelf, bridgeit.context.user.read';
+    var noPermissions = 'bridgeit.context.user.read, bridgeit.context.user.write';
+    var allPermissions = 'bridgeit.context.user.readSelf, bridgeit.context.user.writeSelf';
+
+    before(function (done) {
+        req = new MockRequest();
+        tools.setUserNameHeader(req, username);
+        tools.setServiceTokenHeader(req, token);
+        tools.setUserPermissionsHeader(req, userPermissions);
+        tools.setServicePermissionsHeader(req, servicePermissions);
+        done();
+    });
 
     describe('username', function () {
-
-        var req = new MockRequest();
-        var username = 'johnsmith';
-
-        it('set', function (done) {
-            tools.setUserNameHeader(req, username);
-            done();
-        });
 
         it('get', function (done) {
             var result = tools.getUserNameHeader(req);
@@ -37,59 +53,7 @@ describe(title, function () {
 
     });
 
-    describe('user permissions', function () {
-
-        var req = new MockRequest();
-        var userPermissions = 'bridgeit.context.user.readSelf, bridgeit.context.user.writeSelf, bridgeit.context.user.readAny, bridgeit.context.user.writeAny, bridgeit.context.readSelf, bridgeit.context.writeSelf';
-        var validPermission = 'bridgeit.context.user.readSelf';
-        var invalidPermission = 'bridgeit.context.user.read';
-
-        it('set', function (done) {
-            tools.setUserPermissionsHeader(req, userPermissions);
-            done();
-        });
-
-        it('get', function (done) {
-            var result = tools.getUserPermissionsHeader(req);
-            assert.strictEqual(userPermissions, result);
-            done();
-        });
-
-        it('valid permission', function (done) {
-            var result = tools.hasUserPermissionInHeader(req, validPermission);
-            assert(result);
-            done();
-        });
-
-        it('valid permission', function (done) {
-            var result = tools.hasPermissionInHeader(req, validPermission);
-            assert(result);
-            done();
-        });
-
-        it('invalid permission', function (done) {
-            var result = tools.hasUserPermissionInHeader(req, invalidPermission);
-            assert(result === false);
-            done();
-        });
-
-        it('invalid permission', function (done) {
-            var result = tools.hasPermissionInHeader(req, invalidPermission);
-            assert(result === false);
-            done();
-        });
-
-    });
-
     describe('service token', function () {
-
-        var req = new MockRequest();
-        var token = '4ad88e4a-bbdc-412b-b532-6a18a6f43e35';
-
-        it('set', function (done) {
-            tools.setServiceTokenHeader(req, token);
-            done();
-        });
 
         it('get', function (done) {
             var result = tools.getServiceTokenHeader(req);
@@ -99,17 +63,29 @@ describe(title, function () {
 
     });
 
-    describe('service permissions', function () {
+    describe('user permissions', function () {
 
-        var req = new MockRequest();
-        var servicePermissions = 'bridgeit.context.user.readSelf, bridgeit.context.user.writeSelf, bridgeit.context.user.readAny, bridgeit.context.user.writeAny, bridgeit.context.readSelf, bridgeit.context.writeSelf';
-        var validPermission = 'bridgeit.context.user.readSelf';
-        var invalidPermission = 'bridgeit.context.user.read';
-
-        it('set', function (done) {
-            tools.setServicePermissionsHeader(req, servicePermissions);
+        it('get', function (done) {
+            var result = tools.getUserPermissionsHeader(req);
+            assert.strictEqual(userPermissions, result);
             done();
         });
+
+        it('valid permission', function (done) {
+            var result = tools.hasUserPermissionInHeader(req, userPermission);
+            assert(result === true);
+            done();
+        });
+
+        it('invalid permission', function (done) {
+            var result = tools.hasUserPermissionInHeader(req, servicePermission);
+            assert(result === false);
+            done();
+        });
+
+    });
+
+    describe('service permissions', function () {
 
         it('get', function (done) {
             var result = tools.getServicePermissionsHeader(req);
@@ -118,31 +94,65 @@ describe(title, function () {
         });
 
         it('valid permission', function (done) {
-            var result = tools.hasServicePermissionInHeader(req, validPermission);
-            assert(result);
-            done();
-        });
-
-        it('valid permission', function (done) {
-            var result = tools.hasPermissionInHeader(req, validPermission);
-            assert(result);
+            var result = tools.hasServicePermissionInHeader(req, servicePermission);
+            assert(result === true);
             done();
         });
 
         it('invalid permission', function (done) {
-            var result = tools.hasServicePermissionInHeader(req, invalidPermission);
-            assert(result === false);
-            done();
-        });
-
-        it('invalid permission', function (done) {
-            var result = tools.hasPermissionInHeader(req, invalidPermission);
+            var result = tools.hasServicePermissionInHeader(req, userPermission);
             assert(result === false);
             done();
         });
 
     });
 
+
+    describe('general permissions', function () {
+
+        it('user permission', function (done) {
+            var result = tools.hasPermissionInHeader(req, userPermission);
+            assert(result === true);
+            done();
+        });
+
+        it('service permission', function (done) {
+            var result = tools.hasPermissionInHeader(req, servicePermission);
+            assert(result === true);
+            done();
+        });
+
+        it('invalid permission', function (done) {
+            var result = tools.hasPermissionInHeader(req, unknownPermission);
+            assert(result === false);
+            done();
+        });
+
+        it('has any permission', function (done) {
+            var result = tools.hasAnyPermissionsInHeaders(req, anyButNotAllPermissions);
+            assert(result === true);
+            done();
+        });
+
+        it('has no permission', function (done) {
+            var result = tools.hasAnyPermissionsInHeaders(req, noPermissions);
+            assert(result === false);
+            done();
+        });
+
+        it('has all permissions', function (done) {
+            var result = tools.hasAllPermissionsInHeaders(req, allPermissions);
+            assert(result === true);
+            done();
+        });
+
+        it('not all permissions', function (done) {
+            var result = tools.hasAllPermissionsInHeaders(req, anyButNotAllPermissions);
+            assert(result === false);
+            done();
+        });
+
+    });
 
 });
 

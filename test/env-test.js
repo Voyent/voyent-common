@@ -63,7 +63,7 @@ describe(title, function () {
         it('proxy', function (done) {
             var serviceName = 'proxy';
             var service = env.getService(serviceName);
-            localhostServiceCheck(service, 'http', 'localhost', ':55000', '');
+            localhostServiceCheck(service, 'http', 'localhost', ':55010', '');
             done();
         });
 
@@ -122,42 +122,42 @@ describe(title, function () {
         it('proxy', function (done) {
             var serviceName = 'proxy';
             var service = env.getService(serviceName);
-            localhostServiceCheck(service, 'http', 'localhost', ':55000', '');
+            localhostServiceCheck(service, 'http', 'localhost', ':55010', '');
             done();
         });
 
         it('auth', function (done) {
             var serviceName = 'auth';
             var service = env.getService(serviceName);
-            localhostServiceCheck(service, 'http', 'localhost', ':55000', '/' + serviceName);
+            localhostServiceCheck(service, 'http', 'localhost', ':55010', '/' + serviceName);
             done();
         });
 
         it('locate', function (done) {
             var serviceName = 'locate';
             var service = env.getService(serviceName);
-            localhostServiceCheck(service, 'http', 'localhost', ':55000', '/' + serviceName);
+            localhostServiceCheck(service, 'http', 'localhost', ':55010', '/' + serviceName);
             done();
         });
 
         it('context', function (done) {
             var serviceName = 'context';
             var service = env.getService(serviceName);
-            localhostServiceCheck(service, 'http', 'localhost', ':55000', '/' + serviceName);
+            localhostServiceCheck(service, 'http', 'localhost', ':55010', '/' + serviceName);
             done();
         });
 
         it('docs', function (done) {
             var serviceName = 'docs';
             var service = env.getService(serviceName);
-            localhostServiceCheck(service, 'http', 'localhost', ':55000', '/' + serviceName);
+            localhostServiceCheck(service, 'http', 'localhost', ':55010', '/' + serviceName);
             done();
         });
 
         it('push', function (done) {
             var serviceName = 'push';
             var service = env.getService(serviceName);
-            localhostServiceCheck(service, 'http', 'localhost', ':55000', '/' + serviceName + '/rest');
+            localhostServiceCheck(service, 'http', 'localhost', ':55010', '/' + serviceName + '/rest');
             done();
         });
 
