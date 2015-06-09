@@ -15,3 +15,4 @@ exports.validation = require('./lib/validation');
 exports.db = require('./lib/db');
 exports.crud = require('./lib/crud');
 exports.events = require('./lib/events');
+exports.messages = require('./lib/messages');
