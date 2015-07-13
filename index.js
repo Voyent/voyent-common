@@ -14,4 +14,5 @@ exports.metrics = require('./lib/metrics');
 exports.validation = require('./lib/validation');
 exports.db = require('./lib/db');
 exports.crud = require('./lib/crud');
+exports.crudx = require('./lib/crud-extended');
 exports.events = require('./lib/events');
