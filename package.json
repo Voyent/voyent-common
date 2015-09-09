@@ -25,7 +25,7 @@
     "ioredis": "^1.5.1",
     "jsonschema": "1.0.0",
     "lodash": "^3.1.0",
-    "mongodb": "^1.4.33",
+    "mongodb": "2.0.42",
     "mqtt": "^1.2.1",
     "request": "^2.53.0",
     "superagent": "^0.21.0",
