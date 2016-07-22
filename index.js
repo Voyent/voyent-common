@@ -18,3 +18,4 @@ exports.crud = require('./lib/crud');
 exports.crudx = require('./lib/crud-extended');
 exports.events = require('./lib/events');
 exports.query = require('./lib/query');
+exports.scopes = require('./lib/scopes');
