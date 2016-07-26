@@ -3,7 +3,7 @@
   "version": "0.1.5",
   "description": "Voyent Common Module.  Common utilities, configurations, and functions for Voyent Services.",
   "author": "ICEsoft Technologies Inc.",
-  "keywords": "Coyent service common tools utilities",
+  "keywords": "Voyent service common tools utilities",
   "license": "Apache-2.0",
   "main": "index",
   "directories": {
