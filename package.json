@@ -1,14 +1,9 @@
 {
-  "name": "bridgeit-common",
+  "name": "voyent-common",
   "version": "0.1.5",
-  "description": "BridgeIt Common Module.  Common utilities, configurations, and functions for BridgeIt Services.",
+  "description": "Voyent Common Module.  Common utilities, configurations, and functions for Voyent Services.",
   "author": "ICEsoft Technologies Inc.",
-  "keywords": "bridgeit service common tools utilities",
-  "homepage": "http://bridgeit.mobi/",
-  "bugs": {
-    "url": "http://bridgeit.mobi/forum/",
-    "email": "bridgeit@icesoft.com"
-  },
+  "keywords": "Coyent service common tools utilities",
   "license": "Apache-2.0",
   "main": "index",
   "directories": {
@@ -17,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bridgeit/bridgeit-common"
+    "url": "https://github.com/voyent/voyent-common"
   },
   "dependencies": {
     "async": "^0.9.0",
