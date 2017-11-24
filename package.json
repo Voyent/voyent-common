@@ -22,6 +22,7 @@
     "jsonschema": "1.1.1",
     "lodash": "^4.17.0",
     "mongodb": "^2.2.25",
+    "mongodb-uri": "^0.9.7",
     "mqtt": "^1.2.1",
     "request": "^2.53.0",
     "rx": "^2.5.3",
