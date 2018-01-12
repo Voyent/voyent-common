@@ -19,3 +19,4 @@ exports.crudx = require('./lib/crud-extended');
 exports.events = require('./lib/events');
 exports.query = require('./lib/query');
 exports.scopes = require('./lib/scopes');
+exports.lock = require('./lib/lock');
