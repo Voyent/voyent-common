@@ -1,3 +1,4 @@
+//This library is used by all of our Node-based services
 exports.config = require('./lib/config');
 exports.env = require('./lib/env');
 
