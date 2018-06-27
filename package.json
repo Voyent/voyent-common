@@ -15,13 +15,13 @@
     "url": "https://github.com/voyent/voyent-common"
   },
   "dependencies": {
-    "async": "^0.9.0",
+    "async": "^2.6.1",
     "bcrypt-nodejs": "~0.0.3",
     "ioredis": "^1.5.1",
     "json-templater": "^1.0.2",
     "jsonschema": "1.1.1",
     "lodash": "^4.17.0",
-    "mongodb": "^2.2.25",
+    "mongodb": "^2.2.35",
     "mongodb-uri": "^0.9.7",
     "mqtt": "^1.2.1",
     "request": "^2.53.0",
