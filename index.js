@@ -1,6 +1,6 @@
 //This library is used by all of our Node-based services
 exports.config = require('./lib/config');
-exports.env = require('./lib/env');
+// exports.env = require('./lib/env');
 
 //The logger is deprecated, use loggers instead
 exports.logger = require('./lib/logger');
@@ -21,3 +21,4 @@ exports.events = require('./lib/events');
 exports.query = require('./lib/query');
 exports.scopes = require('./lib/scopes');
 exports.lock = require('./lib/lock');
+exports.runtimeEnvironment = require('./lib/runtimeEnvironment');
