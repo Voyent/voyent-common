@@ -22,3 +22,5 @@ exports.query = require('./lib/query');
 exports.scopes = require('./lib/scopes');
 exports.lock = require('./lib/lock');
 exports.runtimeEnvironment = require('./lib/runtimeEnvironment');
+exports.awsCommon = require('./lib/aws-common');
+exports.awsSQSClient = require('./lib/aws-sqs-client');
