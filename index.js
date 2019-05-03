@@ -94,7 +94,9 @@ module.exports = function (keys, cb) {
             return cb(new Error('could not load environment properties'), getExports());
         }
 
-        console.log('loaded', Object.keys(props).length, 'environment properties', props.DB_URI);
+        console.log('loaded', Object.keys(props).length, 'environment properties from', keys);
+        console.log(JSON.stringify(props));
+
         cb(null, getExports());
     });
 
