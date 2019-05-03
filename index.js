@@ -64,19 +64,19 @@ function getExports() {
  * @param cb (optional)
  * @returns {*} The exported sub modules.
  */
-module.exports = function (cb) {
+module.exports = function (keys, cb) {
 
-    if (!cb) {
-        // console.log('voyent-common/index.js: no callback');
+    if(!keys || !cb){
+        console.log('voyent-common/index.js: missing param(s)', keys, cb);
         return getExports();
     }
 
     if (environmentProperties) {
-        // console.log('voyent-common/index.js: environment properties already set');
+        console.log('voyent-common/index.js: environment properties already set');
         return cb(null, getExports());
     }
 
-    startup.loadEnvironmentProperties(function (err, props) {
+    startup.loadEnvironmentProperties( keys,function (err, props) {
 
         if (err) {
             console.log('could not load environment properties', err.message);
@@ -84,9 +84,7 @@ module.exports = function (cb) {
         }
 
         console.log('loaded', Object.keys(props).length, 'environment properties', props.DB_URI);
-
         cb(null, getExports());
-
     });
 
 };
