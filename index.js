@@ -23,6 +23,7 @@ function getExports() {
         runtimeEnvironment: require('./lib/runtimeEnvironment'),
         awsCommon: require('./lib/aws-common'),
         awsSQSClient: require('./lib/aws-sqs-client'),
+        cloud: require('./lib/cloud')
     };
 }
 
