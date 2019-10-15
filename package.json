@@ -29,7 +29,8 @@
     "uuid": "^1.4.1",
     "validator": "^3.5.0",
     "winston": "^2.4.4",
-    "moment-timezone": "^0.5.26"
+    "moment-timezone": "^0.5.26",
+    "node-object-hash": "^2.0.0"
   },
   "engines": {
     "node": ">=8.0.0"
