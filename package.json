@@ -22,7 +22,7 @@
     "jsonschema": "1.1.1",
     "lodash": "^4.17.13",
     "moment-timezone": "^0.5.26",
-    "mongodb": "^2.2.25",
+    "mongodb": "^3.3",
     "mongodb-uri": "^0.9.7",
     "node-object-hash": "^2.0.0",
     "request": "^2.53.0",
