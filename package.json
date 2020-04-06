@@ -1,6 +1,6 @@
 {
   "name": "voyent-common",
-  "version": "1.5.5",
+  "version": "1.0.0-latest",
   "description": "Voyent Common Module.  Common utilities, configurations, and functions for Voyent Services.",
   "author": "ICEsoft Technologies Inc.",
   "keywords": "Voyent service common tools utilities",
